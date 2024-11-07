@@ -8,7 +8,6 @@ export default function ComponentA( { children }: PropsType ) {
     const [ inputState, setInputState ] = useState< string >( "" );
     const [ textState, setTextState ] = useState< string >( "" );
  
-
     const providerValue: ProductContexObject = {
         productState: productState,
         setProductState: setProductState
@@ -16,11 +15,17 @@ export default function ComponentA( { children }: PropsType ) {
 
     useEffect( () => {
         const fetchData = async () => {
+            let response;
+
+            if ( textState == "" ){
+                return response = await fetch( "" );
+            } else{
+                response = await fetch( `https://dummyjson.com/products/search?q=${ textState }`);
+            }
             
-            const response = await fetch( `https://dummyjson.com/products/search?q=${ textState }`);
             const result: ProductType = await response.json();
 
-            console.log( result.products as ProductType[]);
+            // console.log( result.products as ProductType[]);
             setProductState( result.products as ProductType[] )
             
         };
@@ -32,13 +37,16 @@ export default function ComponentA( { children }: PropsType ) {
     const onBtnClick = () => {
       
         setTextState( inputState );
+        setInputState( "" );
 
     }
     return(
         <ProductContext.Provider value={ providerValue }>
+            <div>
+                <input type="text" value={ inputState } onChange={ ( e ) => setInputState( e.target.value ) } />
+                <button onClick={ onBtnClick }>Search</button>
+            </div>
             { children }
-            <input type="text" value={ inputState } onChange={ ( e ) => setInputState( e.target.value ) } />
-            <button onClick={ onBtnClick }>Search</button>
         </ProductContext.Provider>
     )
 };

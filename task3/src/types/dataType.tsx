@@ -10,7 +10,8 @@ export type ProductType = {
     price?: number,
     rating?: number,
     stock?: number,
-    discountPercentage?: number
+    discountPercentage?: number,
+    id: number
 };
 
 export interface ProductContexObject {
