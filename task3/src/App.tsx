@@ -1,15 +1,20 @@
 import './App.css';
-import ComponentA from './provider/ComponentA';
-import ProductComponent from './components/ProductComponent';
+import SearchComp from './provider/SearchComp';
+import ProductCartComp from './components/ProductCartComp';
+import NavComponent from './components/NavComponent';
+
 
 function App() {
 
-
   return (
+    
     <div className='main'>
-        <ComponentA>
-            <ProductComponent/>
-        </ComponentA>
+
+
+        <NavComponent></NavComponent>
+        <SearchComp>
+            <ProductCartComp/>
+        </SearchComp>
     </div>
   )
 }

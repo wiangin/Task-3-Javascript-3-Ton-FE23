@@ -21,4 +21,10 @@ export interface ProductContexObject {
 
 export interface PropsType {
     children : ReactNode
-}
+};
+
+export interface ModalProps {
+    show: boolean,
+    onClose: () => void,
+    onId: number
+};

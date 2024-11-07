@@ -1,8 +1,9 @@
 import ProductContext from "../context/ProductContex";
 import { ProductType, ProductContexObject, PropsType } from "../types/dataType";
 import { useState,useEffect } from "react";
+import '../style/searchCompStyle.css'
 
-export default function ComponentA( { children }: PropsType ) {
+export default function SearchComp( { children }: PropsType ) {
 
     const [ productState, setProductState ] = useState< ProductType[] >( [] )
     const [ inputState, setInputState ] = useState< string >( "" );
@@ -42,7 +43,7 @@ export default function ComponentA( { children }: PropsType ) {
     }
     return(
         <ProductContext.Provider value={ providerValue }>
-            <div>
+            <div className="search-style">
                 <input type="text" value={ inputState } onChange={ ( e ) => setInputState( e.target.value ) } />
                 <button onClick={ onBtnClick }>Search</button>
             </div>
