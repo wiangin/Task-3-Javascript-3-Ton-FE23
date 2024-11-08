@@ -11,7 +11,7 @@ export default function ModalComponent( props: ModalProps ) {
     const product = useContext( ProductContext );
     // console.log( product?.productState );
 
-    const findProduct = product?.productState.filter( (element) => element.id === props.onId );
+    const findProduct = product?.productState.find( (element) => element.id === props.onId );
     
     console.log(findProduct);
     

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import ProductContext from "../context/ProductContex";
 import '../style/productCart.css';
 // import ModalComponent from "./ModalComponent";
@@ -14,6 +14,7 @@ export default function ProductCartComp() {
     const location = useLocation();
     const navigate = useNavigate();
     const modalOpen = location.pathname === "/moreInfo";
+    const [ idState, setIdstate ] = useState( );
 
 
 
@@ -26,6 +27,11 @@ export default function ProductCartComp() {
         navigate("/");
     };
 
+    const onClickId = (  ) => {
+        console.log();
+        
+    };
+
     return(
         <div>
             <ul>
@@ -35,7 +41,7 @@ export default function ProductCartComp() {
                             <li> 
                                 <h2>{element.title}</h2>
                                 <img src={element.thumbnail}  alt="" />
-                                <Link to="/moreInfo">More Info</Link>
+                                <Link to="/moreInfo" id="{ element.id }" onClick={ onClickId }>More Info</Link>
                                 
                                 <ModalComponent onClose={ closeModal } show={ modalOpen } onId={ element.id }/>
                             </li>
