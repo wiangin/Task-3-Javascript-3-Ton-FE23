@@ -1,27 +1,49 @@
-import { ModalProps } from "../types/dataType";
+
 import '../style/modalStyel.css';
 import { useContext } from "react";
 import ProductContext from "../context/ProductContex";
+import { useNavigate, useParams } from 'react-router-dom';
 
-export default function ModalComponent( props: ModalProps ) {
-    // const [ openState, setOpenState ] = useState< boolean >( false );
-    console.log( props.onId );
-    
-    if( !props.show ) return null;
+export default function ModalComponent(  ) {
+
     const product = useContext( ProductContext );
-    // console.log( product?.productState );
-
-    const findProduct = product?.productState.find( (element) => element.id === props.onId );
+    console.log( product );
+    const params = useParams();
+    const navigate = useNavigate();
     
-    console.log(findProduct);
+    const getProduct = () => {
+        let item;
+        product?.productState.filter( ( element ) => {
+            return element.id === Number( params.id );
+        } )
+        .map( element => {
+            return item = 
+                <div>
+                    <h2>{ element.title }</h2>
+                    <img src={ element.thumbnail } alt={ element.title } />
+                    <p>{ element.description }</p>
+                    <p> { element.price } </p>
+                </div>
+            
+        } )
+        
+        return item;
+    };
+
+    const closeModal = () => {
+        navigate("/");
+    };
     
     return(
-        <div className="modal-overlay" onClick={ props.onClose }>
-            <div className="modal-content">
-           
-                <button className="close-button" onClick={ props.onClose }>Close</button>
-            </div>
-            
+        <div className="modal-overlay" >
+            {
+                params.id && 
+                <div className="modal-content">                   
+                    { getProduct() }
+                    <button className="close-button" onClick={ closeModal }>Close</button>
+                </div>
+            }
         </div>
+        
     )
 }
