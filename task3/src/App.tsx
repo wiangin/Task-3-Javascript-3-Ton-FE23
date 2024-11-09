@@ -5,6 +5,7 @@ import NavComponent from './components/NavComponent';
 import { Routes, Route } from "react-router-dom";
 import ModalComponent from './components/ModalComponent';
 import UserInputComponent from './components/UserInputComponent';
+import FooterComponent from './components/FooterComponent';
 
 function App() {
 
@@ -19,13 +20,18 @@ function App() {
             <Route path='/' element={ 
               <>
                 <NavComponent/>
-                <UserInputComponent/>
+                <div className='empty-products'>
+                  <UserInputComponent/>
+                </div>
+                
+                <FooterComponent/>
               </> } />
             <Route path='/products' element={ 
               <>  
                 <NavComponent/>
                 <UserInputComponent/>
                 <ProductCartComponent/>
+                <FooterComponent/>
               </> } />
             <Route path='/moreInfo/:id' element={ <ModalComponent/> }/>
           </Routes>
