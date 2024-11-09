@@ -27,12 +27,12 @@ function App() {
                 <FooterComponent/>
               </> } />
             <Route path='/products' element={ 
-              <>  
-                <NavComponent/>
-                <UserInputComponent/>
-                <ProductCartComponent/>
-                <FooterComponent/>
-              </> } />
+                <>  
+                  <NavComponent/>
+                  <UserInputComponent/>
+                  <ProductCartComponent/>
+                  <FooterComponent/>
+                </> } />
             <Route path='/moreInfo/:id' element={ <ModalComponent/> }/>
           </Routes>
       </ProviderComponent>
