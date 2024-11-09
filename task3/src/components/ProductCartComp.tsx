@@ -8,7 +8,7 @@ export default function ProductCartComp() {
     const product = useContext( ProductContext );
 
     return(
-        <div>
+        <div className="product-container">
             <ul>
                 { product?.productState.map( ( element ) => {
                     return ( 
