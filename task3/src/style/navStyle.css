@@ -1,6 +1,15 @@
 
 .nave-style {
+    display: flex;
+    justify-content: space-between;
     border: 2px solid black;
     display: flex;
+    padding: 10px ;
+}
+
+.nave-style p {
+    padding: 10px;
+}
+.nave-style a {
     padding: 10px;
 }

@@ -1,23 +1,35 @@
 import './App.css';
-import SearchComp from './provider/SearchComp';
-import ProductCartComp from './components/ProductCartComp';
+import ProviderComponent from './provider/ProviderComponent';
+import ProductCartComponent from './components/ProductCartComponent';
 import NavComponent from './components/NavComponent';
 import { Routes, Route } from "react-router-dom";
 import ModalComponent from './components/ModalComponent';
+import UserInputComponent from './components/UserInputComponent';
 
 function App() {
 
   return (
-    
-    <div className='main'>
 
-      <NavComponent></NavComponent>
-      <SearchComp>
-          <Routes>  
-              <Route path="/moreInfo/:id" element={ <ModalComponent></ModalComponent> }></Route>
+    <div className='main'>
+      
+      {/*Search  */}
+      <ProviderComponent>
+          {/*  Här kommer det ligga min andra komp som är consumer    */}
+          <Routes>
+            <Route path='/' element={ 
+              <>
+                <NavComponent/>
+                <UserInputComponent/>
+              </> } />
+            <Route path='/products' element={ 
+              <>  
+                <NavComponent/>
+                <UserInputComponent/>
+                <ProductCartComponent/>
+              </> } />
+            <Route path='/moreInfo:id' element={ <ModalComponent/> }/>
           </Routes>
-          <ProductCartComp/>
-      </SearchComp>
+      </ProviderComponent>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import '../style/productCart.css';
 import { Link } from "react-router-dom";
 
 
-export default function ProductCartComp() {
+export default function ProductCartComponent() {
     const product = useContext( ProductContext );
 
     return(
@@ -23,6 +23,5 @@ export default function ProductCartComp() {
                 } ) }
             </ul>
         </div>
-    
     )
 };

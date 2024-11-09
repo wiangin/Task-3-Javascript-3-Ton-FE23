@@ -17,6 +17,9 @@ export type ProductType = {
 export interface ProductContexObject {
     productState: ProductType[],
     setProductState: React.Dispatch<React.SetStateAction<ProductType[]>>
+    textState: string,
+    setTextState: React.Dispatch<React.SetStateAction<string>>
+
 };
 
 export interface PropsType {

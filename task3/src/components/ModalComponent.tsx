@@ -7,7 +7,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 export default function ModalComponent(  ) {
 
     const product = useContext( ProductContext );
-    console.log( product );
     const params = useParams();
     const navigate = useNavigate();
     
@@ -23,8 +22,7 @@ export default function ModalComponent(  ) {
                     <img src={ element.thumbnail } alt={ element.title } />
                     <p>{ element.description }</p>
                     <p> { element.price } </p>
-                </div>
-            
+                </div> 
         } )
         
         return item;
@@ -43,7 +41,6 @@ export default function ModalComponent(  ) {
                     <button className="close-button" onClick={ closeModal }>Close</button>
                 </div>
             }
-        </div>
-        
+        </div> 
     )
 }
