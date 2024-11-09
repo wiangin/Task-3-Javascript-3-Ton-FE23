@@ -11,7 +11,6 @@ export default function UserInputComponent() {
     const navigate = useNavigate();
     // console.log(product?.setTextState);
     
-
     const onBtnClick = () => {
       
         product?.setTextState( inputState );

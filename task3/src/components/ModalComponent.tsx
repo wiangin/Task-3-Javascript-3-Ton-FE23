@@ -29,7 +29,7 @@ export default function ModalComponent(  ) {
     };
 
     const closeModal = () => {
-        navigate("/");
+        navigate("/products");
     };
     
     return(

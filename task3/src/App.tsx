@@ -27,7 +27,7 @@ function App() {
                 <UserInputComponent/>
                 <ProductCartComponent/>
               </> } />
-            <Route path='/moreInfo:id' element={ <ModalComponent/> }/>
+            <Route path='/moreInfo/:id' element={ <ModalComponent/> }/>
           </Routes>
       </ProviderComponent>
     </div>
