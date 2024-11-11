@@ -10,12 +10,16 @@ export default function ProviderComponent( { children }: PropsType ) {
 
     // This is state for data from UserInputComponent.
     const [ textState, setTextState ] = useState< string >( "" );
+    const [ cartList, setCartList ] = useState< ProductType[] >( [] );
    
     const providerValue: ProductContexObject = {
         productState: productState,
         setProductState: setProductState,
         textState: textState,
-        setTextState: setTextState
+        setTextState: setTextState,
+        cartList: cartList,
+        setCartList: setCartList
+
     }
 
     useEffect( () => {

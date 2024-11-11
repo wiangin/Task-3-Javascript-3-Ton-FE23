@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export type ProductType = {
-    products: ProductType[];
+    products: ProductType[],
     title: string,
     thumbnail: string,
     description: string,
@@ -19,6 +19,8 @@ export interface ProductContexObject {
     setProductState: React.Dispatch<React.SetStateAction<ProductType[]>>
     textState: string,
     setTextState: React.Dispatch<React.SetStateAction<string>>
+    cartList: ProductType[],
+    setCartList: React.Dispatch<React.SetStateAction<ProductType[]>>
 
 };
 
