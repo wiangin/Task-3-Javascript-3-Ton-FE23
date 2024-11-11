@@ -1,5 +1,5 @@
-.product-container{
-    height: 100vh;
+.cart-list{
+    min-height: 85vh;
 }
 
 .product-cart {
@@ -11,8 +11,4 @@
 
 .product-cart img {
     max-width: 60px;
-}
-
-div li {
-    list-style: none;
 }

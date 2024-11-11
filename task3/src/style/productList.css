@@ -1,0 +1,18 @@
+.product-container{
+    min-height: 100vh;
+}
+
+.product-cart {
+    border: 2px solid black;
+    border-radius: 10PX;
+    margin: 10px 20px;
+    padding: 20px;
+}
+
+.product-cart img {
+    max-width: 60px;
+}
+
+div li {
+    list-style: none;
+}

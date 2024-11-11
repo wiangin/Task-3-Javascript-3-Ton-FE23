@@ -1,11 +1,12 @@
 import './App.css';
 import ProviderComponent from './provider/ProviderComponent';
-import ProductCartComponent from './components/ProductCartComponent';
+import ProductListComponent from './components/ProductListComponent';
 import NavComponent from './components/NavComponent';
 import { Routes, Route } from "react-router-dom";
 import ModalComponent from './components/ModalComponent';
 import UserInputComponent from './components/UserInputComponent';
 import FooterComponent from './components/FooterComponent';
+import AddToCartComponent from './components/AddToCartComponent';
 
 function App() {
 
@@ -30,10 +31,17 @@ function App() {
                 <>  
                   <NavComponent/>
                   <UserInputComponent/>
-                  <ProductCartComponent/>
+                  <ProductListComponent/>
                   <FooterComponent/>
                 </> } />
             <Route path='/moreInfo/:id' element={ <ModalComponent/> }/>
+            <Route path='/cartList' element={ 
+                <>
+                  <NavComponent/>
+                  <AddToCartComponent/>
+                  <FooterComponent/>
+                </>}>
+              </Route>
           </Routes>
       </ProviderComponent>
     </div>

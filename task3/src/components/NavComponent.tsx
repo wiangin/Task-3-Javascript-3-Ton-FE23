@@ -7,6 +7,7 @@ export default function NavComponent() {
         <div className='nave-style'>
             <p>My shop</p>
             <Link to={"/"}>Home</Link>
+            <Link to={'/cartList'}>Cart</Link>
         </div>
     )
 }

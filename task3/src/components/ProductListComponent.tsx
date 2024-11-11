@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import ProductContext from "../context/ProductContex";
-import '../style/productCart.css';
+import '../style/productList.css';
 import { Link } from "react-router-dom";
 import { ProductType } from "../types/dataType";
 
 
-export default function ProductCartComponent() {
+export default function ProductListComponent() {
     const product = useContext( ProductContext );
     const cartList = useContext( ProductContext );
 
