@@ -20,7 +20,9 @@ export interface ProductContexObject {
     textState: string,
     setTextState: React.Dispatch<React.SetStateAction<string>>
     cartList: ProductType[],
-    setCartList: React.Dispatch<React.SetStateAction<ProductType[]>>
+    setCartList: React.Dispatch<React.SetStateAction<ProductType[]>>,
+    addTocartState: number,
+    setAddToCartState: React.Dispatch<React.SetStateAction<number>>
 
 };
 

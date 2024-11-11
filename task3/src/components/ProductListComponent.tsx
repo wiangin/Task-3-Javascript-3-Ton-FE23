@@ -8,8 +8,9 @@ import { ProductType } from "../types/dataType";
 export default function ProductListComponent() {
     const product = useContext( ProductContext );
     const cartList = useContext( ProductContext );
+    const countState = useContext( ProductContext );
 
-    console.log( "i min cartList state", cartList?.cartList );
+    // console.log( "i min cartList state", cartList?.cartList );
     
 
     const onBtnClick = ( event: React.MouseEvent<HTMLButtonElement> ) => {
@@ -17,23 +18,23 @@ export default function ProductListComponent() {
         const target = event.target as HTMLButtonElement;
         const id = target.id;
         // console.log( id );
-
+        
+  
         const getProduct = () => {
             let element;
             product?.productState.filter( ( item ) => {
+
                 return item.id === Number( id );
             } )
             .map( item => { return element = item } );
-            
+        
             return element;
         };
-        
+
         // Add product to cart.
         cartList?.setCartList( ( element: ProductType[] ) => {
             return [ ...element, getProduct() ] as ProductType[];
-        } )
-      
-        
+        } );
     };
 
     return(
@@ -45,8 +46,9 @@ export default function ProductListComponent() {
                             <li> 
                                 <h2>{element.title}</h2>
                                 <img src={element.thumbnail}  alt={ element.title } />
-                                 <Link to={"/moreInfo/" + element.id }>More Info</Link>
-                                 <button onClick={ onBtnClick } id={ element.id.toString() }>Add</button>
+                                <p>{ element.price }</p>
+                                <Link to={"/moreInfo/" + element.id }>More Info</Link>
+                                <button onClick={ onBtnClick } id={ element.id.toString() }>Add</button>
                             </li>
                         </div>
                     )

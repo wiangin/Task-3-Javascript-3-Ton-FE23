@@ -11,6 +11,7 @@ export default function ProviderComponent( { children }: PropsType ) {
     // This is state for data from UserInputComponent.
     const [ textState, setTextState ] = useState< string >( "" );
     const [ cartList, setCartList ] = useState< ProductType[] >( [] );
+    const [ addTocartState, setAddToCartState ] = useState< number >( 0 ); 
    
     const providerValue: ProductContexObject = {
         productState: productState,
@@ -18,8 +19,9 @@ export default function ProviderComponent( { children }: PropsType ) {
         textState: textState,
         setTextState: setTextState,
         cartList: cartList,
-        setCartList: setCartList
-
+        setCartList: setCartList,
+        addTocartState: addTocartState,
+        setAddToCartState: setAddToCartState
     }
 
     useEffect( () => {
