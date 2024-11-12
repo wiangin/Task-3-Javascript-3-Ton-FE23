@@ -8,7 +8,7 @@ import { ProductType } from "../types/dataType";
 export default function ProductListComponent() {
     const product = useContext( ProductContext );
     const cartList = useContext( ProductContext );
-    const countState = useContext( ProductContext );
+    // const countState = useContext( ProductContext );
 
     // console.log( "i min cartList state", cartList?.cartList );
     
@@ -39,6 +39,7 @@ export default function ProductListComponent() {
 
     return(
         <div className="product-container">
+            <h2>Product List</h2>
             <ul>
                 { product?.productState.map( ( element ) => {
                     return ( 

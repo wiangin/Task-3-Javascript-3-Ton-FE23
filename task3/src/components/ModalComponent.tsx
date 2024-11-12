@@ -25,7 +25,7 @@ export default function ModalComponent( ) {
                         } )
                         .map( element => {
                             return (
-                                <div>
+                                <div key={ element.id }>
                                     <h2>{ element.title }</h2>
                                     <img src={ element.thumbnail } alt={ element.title } />
                                     <div>
