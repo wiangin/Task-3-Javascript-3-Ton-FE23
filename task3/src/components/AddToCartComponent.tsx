@@ -1,7 +1,6 @@
 import '../style/cartList.css';
 import { useContext, useEffect, useState } from 'react';
 import ProductContext from '../context/ProductContex';
-import { ProductType } from '../types/dataType';
 
 
 
@@ -12,7 +11,7 @@ export default function AddToCartComponent() {
 
     // console.log( product?.cartList );
 
-    let objCount = product?.cartList.reduce<Record<string, number>>( ( counts, obj ) => {
+    let orginalProductObj = product?.cartList.reduce<Record<string, number>>( ( counts, obj ) => {
 
         let key = JSON.stringify( obj );
 
@@ -23,7 +22,7 @@ export default function AddToCartComponent() {
 
     }, {}) || {};
 
-    let readableCounts = Object.entries( objCount ).map( ([ key, count ]) =>({
+    let newProductObj = Object.entries( orginalProductObj ).map( ([ key, count ]) =>({
         object: JSON.parse( key ),
         count: count
     }) );
@@ -31,25 +30,39 @@ export default function AddToCartComponent() {
 
     useEffect( () => {
         product?.cartList.map( ( element ) => {
-            console.log( element );
-            
                 setTotalState( ( e ) => { return e + element.price } )
-            
         } )
     }, [] );
 
+    const onClickDelete = ( event:React.MouseEvent<HTMLButtonElement> ) => {
+        
+        const target = event.target as HTMLButtonElement;
+        const btnValue = target.value;
+        // console.log( "jag har klickat delete", btnValue );
+        newProductObj.map( ( element ) => {
+            // console.log( element );
+            
+            if( element.object.id === Number( btnValue ) ) {
+                console.log( element.object.id );
+                
+            }
+        } )
+        
+    }
           
     return(
         <div className="cart-list">
             <h2>Shopping Cart</h2>
             {
-                readableCounts.map( ( element ) => {
+                newProductObj.map( ( element ) => {
                     return (
                         <div className='product-cart' key={ element.object.id }>
+                            
                             <h2>{ element.object.title }</h2>
                             <img src={ element.object.thumbnail } alt={ element.object.title } />
-                            <p>Prpice: { element.object.price }</p>
-                            <p>In cart :{ element.count }</p>
+                            <p>Price: { element.object.price }</p>
+                            <p>In cart : { element.count }</p>
+                            <button value={ element.object.id } onClick={ onClickDelete }>Delete</button>
                         </div>
                     )
                 } )
