@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 export type ProductType = {
+    [x: string]: any;
     products: ProductType[],
     title: string,
     thumbnail: string,
@@ -29,3 +30,4 @@ export interface ProductContexObject {
 export interface PropsType {
     children : ReactNode
 };
+

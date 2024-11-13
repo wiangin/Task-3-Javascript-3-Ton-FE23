@@ -8,23 +8,17 @@ import { ProductType } from "../types/dataType";
 export default function ProductListComponent() {
     const product = useContext( ProductContext );
     const cartList = useContext( ProductContext );
-    // const countState = useContext( ProductContext );
-
-    // console.log( "i min cartList state", cartList?.cartList );
-    
 
     const onBtnClick = ( event: React.MouseEvent<HTMLButtonElement> ) => {
 
         const target = event.target as HTMLButtonElement;
-        const id = target.id;
+        const value = target.value;
         // console.log( id );
         
-  
         const getProduct = () => {
             let element;
             product?.productState.filter( ( item ) => {
-
-                return item.id === Number( id );
+                return item.id === Number( value );
             } )
             .map( item => { return element = item } );
         
@@ -41,7 +35,8 @@ export default function ProductListComponent() {
         <div className="product-container">
             <h2>Product List</h2>
             <ul>
-                { product?.productState.map( ( element ) => {
+                { 
+                    product?.productState.map( ( element ) => {
                     return ( 
                         <div className="product-cart" key={ element.id }>
                             <li> 
@@ -49,11 +44,12 @@ export default function ProductListComponent() {
                                 <img src={element.thumbnail}  alt={ element.title } />
                                 <p>{ element.price }</p>
                                 <Link to={"/moreInfo/" + element.id }>More Info</Link>
-                                <button onClick={ onBtnClick } id={ element.id.toString() }>Add</button>
+                                <button onClick={ onBtnClick } value={ element.id.toString() }>Add</button>
                             </li>
                         </div>
-                    )
-                } ) }
+                        )
+                    } ) 
+                }
             </ul>
         </div>
     )

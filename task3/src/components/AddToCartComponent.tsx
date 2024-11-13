@@ -1,6 +1,7 @@
 import '../style/cartList.css';
 import { useContext, useEffect, useState } from 'react';
 import ProductContext from '../context/ProductContex';
+import { ProductType } from '../types/dataType';
 
 
 
@@ -8,8 +9,7 @@ export default function AddToCartComponent() {
 
     const product = useContext( ProductContext );
     const [ totalState, setTotalState ] = useState< number >( 0 );
-
-    // console.log( product?.cartList );
+    
 
     let orginalProductObj = product?.cartList.reduce<Record<string, number>>( ( counts, obj ) => {
 
@@ -23,35 +23,27 @@ export default function AddToCartComponent() {
     }, {}) || {};
 
     let newProductObj = Object.entries( orginalProductObj ).map( ([ key, count ]) =>({
-        object: JSON.parse( key ),
-        count: count
+        object: JSON.parse( key ) as ProductType,
+        count: count    
     }) );
-
-    console.log( newProductObj );
-    
 
     useEffect( () => {
         product?.cartList.map( ( element ) => {
-                setTotalState( ( e ) => { return e + element.price } )
+
+            setTotalState( ( e ) => { return e + element.price } )
+    
         } )
-    }, [] );
+    }, [ product?.cartList ] );
 
     const onClickDelete = ( event:React.MouseEvent<HTMLButtonElement> ) => {
         
         const target = event.target as HTMLButtonElement;
         const btnValue = target.value;
-        // console.log( "jag har klickat delete", btnValue );
-        newProductObj.map( ( element ) => {
-            // console.log( element );
-            
-            if( element.object.id === Number( btnValue ) ) {
-                console.log( element.object.id );
-                // uppdatera addToCart state ??
-            }
-        } )
-        
+    
+        product?.setCartList( product.cartList.filter( ( e )  => { return (e.id !== Number( btnValue )) } ) ); 
+        setTotalState( 0 )     
     }
-          
+ 
     return(
         <div className="cart-list">
             <h2>Shopping Cart</h2>
@@ -59,7 +51,6 @@ export default function AddToCartComponent() {
                 newProductObj.map( ( element ) => {
                     return (
                         <div className='product-cart' key={ element.object.id }>
-                            
                             <h2>{ element.object.title }</h2>
                             <img src={ element.object.thumbnail } alt={ element.object.title } />
                             <p>Price: { element.object.price }</p>

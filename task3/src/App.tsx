@@ -13,12 +13,11 @@ function App() {
   return (
 
     <div className='main'>
-      
-      {/*Search  */}
       <ProviderComponent>
           {/*  Här kommer det ligga min andra komp som är consumer    */}
           <Routes>
-            <Route path='/' element={ 
+            
+            <Route path='/' element={
               <>
                 <NavComponent/>
                 <div className='empty-products'>
