@@ -42,7 +42,7 @@ export default function ProductListComponent() {
                             <li> 
                                 <h2>{element.title}</h2>
                                 <img src={element.thumbnail}  alt={ element.title } />
-                                <p>{ element.price }</p>
+                                <p> Price : { element.price }</p>
                                 <Link to={"/moreInfo/" + element.id }>More Info</Link>
                                 <button onClick={ onBtnClick } value={ element.id.toString() }>Add</button>
                             </li>
