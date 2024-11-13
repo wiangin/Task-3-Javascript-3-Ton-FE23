@@ -27,6 +27,8 @@ export default function AddToCartComponent() {
         count: count
     }) );
 
+    console.log( newProductObj );
+    
 
     useEffect( () => {
         product?.cartList.map( ( element ) => {
@@ -44,7 +46,7 @@ export default function AddToCartComponent() {
             
             if( element.object.id === Number( btnValue ) ) {
                 console.log( element.object.id );
-                
+                // uppdatera addToCart state ??
             }
         } )
         
