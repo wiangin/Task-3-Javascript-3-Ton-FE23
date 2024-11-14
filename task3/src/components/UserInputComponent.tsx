@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import ProductContext from "../context/ProductContex";
 import { useNavigate } from "react-router-dom";
-import DropDownComponent from "./DropDownComponent";
+// import DropDownComponent from "./DropDownComponent";
 
 export default function UserInputComponent() {
     const [ inputState, setInputState ] = useState< string >( "" );

@@ -40,11 +40,23 @@ export default function ProductListComponent() {
                     return ( 
                         <div className="product-cart" key={ element.id }>
                             <li> 
-                                <h2>{element.title}</h2>
-                                <img src={element.thumbnail}  alt={ element.title } />
-                                <p> Price : { element.price }</p>
-                                <Link to={"/moreInfo/" + element.id }>More Info</Link>
-                                <button onClick={ onBtnClick } value={ element.id.toString() }>Add</button>
+                                <div>
+                                    <h3>{element.title}</h3>
+                                </div>
+                                
+                                <div className="img-and-price">
+                                    <img src={element.thumbnail}  alt={ element.title } />
+                                    <div>   
+                                        <p> Price : { element.price }</p>
+                                        <Link to={"/moreInfo/" + element.id }>More Info</Link>
+                                    </div>
+                                
+                                </div>
+                    
+                                <div className="add-btn">
+                                    <button onClick={ onBtnClick } value={ element.id.toString() }>Add</button>
+                                </div>
+                               
                             </li>
                         </div>
                         )

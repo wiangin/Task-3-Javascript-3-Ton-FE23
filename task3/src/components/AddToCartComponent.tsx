@@ -45,21 +45,37 @@ export default function AddToCartComponent() {
     }
  
     return(
-        <div className="cart-list">
+        <div className="inCart-container">
             <h2>Shopping Cart</h2>
-            {
-                newProductObj.map( ( element ) => {
-                    return (
-                        <div className='product-cart' key={ element.object.id }>
-                            <h2>{ element.object.title }</h2>
-                            <img src={ element.object.thumbnail } alt={ element.object.title } />
-                            <p>Price: { element.object.price }</p>
-                            <p>In cart : { element.count }</p>
-                            <button value={ element.object.id } onClick={ onClickDelete }>Delete</button>
-                        </div>
-                    )
-                } )
-            } 
+            <div className='inCart-list'>
+
+                <ul>
+                {
+                    newProductObj.map( ( element ) => {
+                        return (
+                            <div className='product-inCart' key={ element.object.id }>
+                                <li>
+                                    <div>
+                                        <h3>{ element.object.title }</h3>
+                                    </div>
+
+                                    <div className="img-and-price-incart">
+                                        <img src={ element.object.thumbnail } alt={ element.object.title } />
+                                        <div>
+                                            <p>Price: { element.object.price }</p>
+                                            <p>In cart : { element.count }</p>
+                                            <button className='delete-btn' value={ element.object.id } onClick={ onClickDelete }>Delete</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        )
+                    } )
+                    }
+                </ul>
+            </div>
+            
+           
             <h2>Total: { totalState }</h2>
         </div>
     )
