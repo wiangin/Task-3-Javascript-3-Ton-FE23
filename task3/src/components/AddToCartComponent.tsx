@@ -2,8 +2,6 @@ import '../style/cartList.css';
 import { useContext, useEffect, useState } from 'react';
 import ProductContext from '../context/ProductContex';
 import { ProductType } from '../types/dataType';
-import DeleteIcon from '../assets/deleteIcon.png'
-
 
 
 export default function AddToCartComponent() {

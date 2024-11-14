@@ -2,6 +2,11 @@
     min-height: 100vh;
 }
 
+.inCart-container h2 {
+    margin-top: 20px;
+    margin-left: 24px;
+}
+
 .inCart-list {
     min-height: 100vh;
 }
@@ -12,7 +17,7 @@
     margin: 20px 20px 30px 20px;
     padding: 20px;
     box-shadow: 4px 4px 5px lightgray;
-    min-width: 250px;
+    width: 275px;
 }
 
 .product-inCart li {
@@ -21,8 +26,8 @@
 }
 .product-inCart img {
     max-width: 90px;
-   
 }
+
 
 .img-and-price-incart {
     display: flex;

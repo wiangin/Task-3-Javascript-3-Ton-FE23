@@ -11,7 +11,7 @@ export default function NavComponent() {
             
             <div className='nav-link'>
                 <Link to={"/"}>Home</Link>
-                <Link to={"/products"}>Products</Link>
+                <Link to={"/products"}>Search</Link>
                 <Link to={'/cartList'}>Cart</Link>
             </div>
             
