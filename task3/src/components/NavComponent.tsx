@@ -5,10 +5,16 @@ export default function NavComponent() {
 
     return(
         <div className='nave-style'>
-            <p>My shop</p>
-            <Link to={"/"}>Home</Link>
-            <Link to={"/products"}>Products</Link>
-            <Link to={'/cartList'}>Cart</Link>
+            <div>
+                <p>The Magic Shop</p>
+            </div>
+            
+            <div className='nav-link'>
+                <Link to={"/"}>Home</Link>
+                <Link to={"/products"}>Products</Link>
+                <Link to={'/cartList'}>Cart</Link>
+            </div>
+            
         </div>
     )
 }

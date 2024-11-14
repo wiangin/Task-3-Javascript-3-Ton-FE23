@@ -1,0 +1,20 @@
+.empty-products {
+    min-height: 100vh;
+    /* text-align: center; */
+}
+
+.image-container img {
+    max-width: 345px;
+    margin: 0.8rem ;
+    border-radius: 10PX;
+    box-shadow: 5px 5px 5px rgb(133, 133, 133);
+    background: none;
+}
+
+.home-cart {
+    background: rgb(248, 248, 248);
+    border-radius: 10PX;
+    margin: 20px 20px 30px 20px;
+    padding: 20px;
+    box-shadow: 4px 4px 5px lightgray;
+}

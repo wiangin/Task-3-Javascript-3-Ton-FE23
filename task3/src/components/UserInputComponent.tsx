@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import ProductContext from "../context/ProductContex";
 import { useNavigate } from "react-router-dom";
+import '../style/inputStyle.css';
 // import DropDownComponent from "./DropDownComponent";
 
 export default function UserInputComponent() {
@@ -34,7 +35,7 @@ export default function UserInputComponent() {
     return(
         <div className="search-style">
                 {/* <input type="text" onChange={ ( e ) => setInputState( e.target.value ) } value={ inputState } /> */}
-                <input type="text" onChange={ onChangeInput } value={ inputState } />
+                <input type="text" onChange={ onChangeInput } value={ inputState } placeholder="Search..."/>
                 <button onClick={ onBtnClick }>Search</button>
                 {/* {
                     dropDown && <DropDownComponent></DropDownComponent>

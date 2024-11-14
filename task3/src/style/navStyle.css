@@ -2,14 +2,32 @@
 .nave-style {
     display: flex;
     justify-content: space-between;
-    border: 2px solid black;
-    display: flex;
     padding: 10px ;
+    background:lightblue;
+    color: red;
 }
 
 .nave-style p {
     padding: 10px;
+    margin-left: 1rem;
+    font-size: larger;
 }
-.nave-style a {
-    padding: 10px;
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link a {
+    margin-right: 0.8rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-link a:hover {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: rgb(247, 40, 40);
+    font-style: italic;
 }

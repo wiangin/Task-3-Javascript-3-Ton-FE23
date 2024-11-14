@@ -1,9 +1,10 @@
 .footer-container{
     display: flex;
     justify-content: space-between;
-    border: 2px solid black;
     width: 100%;
+    background: rgb(137, 137, 137);
+    color: white
 }
-p{
-    padding: 15px;
+.footer-container p{
+    padding: 20px;
 }

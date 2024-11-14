@@ -1,13 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductContext from "../context/ProductContex";
 import '../style/productList.css';
 import { Link } from "react-router-dom";
 import { ProductType } from "../types/dataType";
+import HomePageComponent from "./HomePageComponent";
 
 
 export default function ProductListComponent() {
     const product = useContext( ProductContext );
     const cartList = useContext( ProductContext );
+    
+    const [ showState, setShowState ] = useState( false );
+
+    useEffect( () => {
+        console.log( product?.textState.length );
+        if( product?.textState !== "" ){
+            setShowState( true )
+        } else {
+            console.log( "ja, det är tumt");
+        }
+
+    }, [ product?.textState ] );
+
+
+    
 
     const onBtnClick = ( event: React.MouseEvent<HTMLButtonElement> ) => {
 
@@ -34,7 +50,8 @@ export default function ProductListComponent() {
     return(
         <div className="product-container">
             <h2>Product List</h2>
-            <ul>
+
+           { !showState ? <HomePageComponent/> : <ul>
                 { 
                     product?.productState.map( ( element ) => {
                     return ( 
@@ -63,6 +80,12 @@ export default function ProductListComponent() {
                     } ) 
                 }
             </ul>
+           
+           
+           
+           
+           }
+            
         </div>
     )
 };

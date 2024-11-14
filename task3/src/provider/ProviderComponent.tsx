@@ -29,7 +29,7 @@ export default function ProviderComponent( { children }: PropsType ) {
             let response;
 
             if ( providerValue.textState == "" ){
-                return response = await fetch( "" );
+                response = await fetch( "https://dummyjson.com/products?limit=5" );
             } else{
                 response = await fetch( `https://dummyjson.com/products/search?q=${ providerValue.textState }`);
             }

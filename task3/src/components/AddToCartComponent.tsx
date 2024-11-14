@@ -2,6 +2,7 @@ import '../style/cartList.css';
 import { useContext, useEffect, useState } from 'react';
 import ProductContext from '../context/ProductContex';
 import { ProductType } from '../types/dataType';
+import DeleteIcon from '../assets/deleteIcon.png'
 
 
 
@@ -43,6 +44,7 @@ export default function AddToCartComponent() {
         product?.setCartList( product.cartList.filter( ( e )  => { return (e.id !== Number( btnValue )) } ) ); 
         setTotalState( 0 )     
     }
+
  
     return(
         <div className="inCart-container">

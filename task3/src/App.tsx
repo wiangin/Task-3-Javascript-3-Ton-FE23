@@ -7,6 +7,7 @@ import ModalComponent from './components/ModalComponent';
 import UserInputComponent from './components/UserInputComponent';
 import FooterComponent from './components/FooterComponent';
 import AddToCartComponent from './components/AddToCartComponent';
+import HomePageComponent from './components/HomePageComponent';
 
 function App() {
 
@@ -20,10 +21,7 @@ function App() {
             <Route path='/' element={
               <>
                 <NavComponent/>
-                <div className='empty-products'>
-                  <UserInputComponent/>
-                </div>
-                
+                <HomePageComponent/>
                 <FooterComponent/>
               </> } />
             <Route path='/products' element={ 
