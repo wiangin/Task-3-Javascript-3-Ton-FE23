@@ -1,3 +1,8 @@
+//Ton FE 23
+//This provider component contains states and functions to fetching API.
+//API source https://dummyjson.com.
+
+
 import ProductContext from "../context/ProductContex";
 import { ProductType, ProductContexObject, PropsType } from "../types/dataType";
 import { useState,useEffect } from "react";

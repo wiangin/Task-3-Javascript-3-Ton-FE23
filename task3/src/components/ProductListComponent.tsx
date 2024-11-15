@@ -1,3 +1,7 @@
+//Ton FE 23
+//Product list component do display the product when uers has filled search input.
+// Uppdate cartList state.
+
 import { useContext} from "react";
 import ProductContext from "../context/ProductContex";
 import '../style/productList.css';

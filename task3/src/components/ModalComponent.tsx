@@ -1,3 +1,6 @@
+//Ton FE23
+//Popup modal when user has click "More Info LINK"
+
 
 import '../style/modalStyel.css';
 import { useContext } from "react";
