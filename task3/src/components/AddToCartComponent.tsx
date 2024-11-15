@@ -1,4 +1,4 @@
-//Ton FE 23
+//Ton FE23
 //This comonent display product list when user has click ADD.
 //Contains functions to check if the same product has add and display only one identical item.
 //Contains function to update the total price.

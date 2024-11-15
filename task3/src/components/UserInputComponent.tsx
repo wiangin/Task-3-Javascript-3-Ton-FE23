@@ -1,4 +1,4 @@
-// Ton FE 23.
+// Ton FE23.
 //Contains input field and update text state.
 
 import { useState } from "react";
