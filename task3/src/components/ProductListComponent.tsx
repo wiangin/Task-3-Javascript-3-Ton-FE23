@@ -48,7 +48,7 @@ export default function ProductListComponent() {
                                 <div className="img-and-price">
                                     <img src={element.thumbnail}  alt={ element.title } />
                                     <div>   
-                                        <p> Price : { element.price }</p>
+                                        <p> Price { element.price } $</p>
                                         <Link to={"/moreInfo/" + element.id }>More Info</Link>
                                     </div>
                                 

@@ -28,19 +28,19 @@ export default function ModalComponent( ) {
                                 <div key={ element.id }>
                                     <h2>{ element.title }</h2>
                                     <img src={ element.thumbnail } alt={ element.title } />
-                                    <div>
+                                    <div className='description-container'>
                                         <h3> Description</h3>
                                         <p>{ element.description }</p>
                                     </div>
-                                    <div>
+                                    <div className='price-container'>
                                         <h3>Price</h3> 
-                                        <p>{ element.price }</p>
+                                        <p> { element.price } $</p>
                                     </div>
                                 </div> 
                                 ) 
                         } )
                     }
-                    <button className="close-button" onClick={ closeModal }>Close</button>
+                    <button className="close-button" onClick={ closeModal }>&#x2715;</button>
                 </div>
             }
         </div> 

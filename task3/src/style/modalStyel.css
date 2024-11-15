@@ -22,11 +22,20 @@
   
   .close-button {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 10px;
     background: transparent;
     border: none;
     font-size: 24px;
     cursor: pointer;
+  }
+
+  .price-container{
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .price-container p {
+    margin-left: 5px;
   }
   

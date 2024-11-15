@@ -4,6 +4,7 @@ import ProductContext from '../context/ProductContex';
 import { ProductType } from '../types/dataType';
 
 
+
 export default function AddToCartComponent() {
 
     const product = useContext( ProductContext );
@@ -62,8 +63,8 @@ export default function AddToCartComponent() {
                                     <div className="img-and-price-incart">
                                         <img src={ element.object.thumbnail } alt={ element.object.title } />
                                         <div>
-                                            <p>Price: { element.object.price }</p>
-                                            <p>In cart : { element.count }</p>
+                                            <p>Price { element.object.price }</p>
+                                            <p>Shopping Cart  { element.count }</p>
                                             <button className='delete-btn' value={ element.object.id } onClick={ onClickDelete }>Delete</button>
                                         </div>
                                     </div>
