@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import ModalComponent from './components/ModalComponent';
 import UserInputComponent from './components/UserInputComponent';
 import FooterComponent from './components/FooterComponent';
-import AddToCartComponent from './components/AddToCartComponent';
+import ShoppingCartComponent from './components/ShoppingCartComponent';
 
 function App() {
 
@@ -35,7 +35,7 @@ function App() {
             <Route path='/cartList' element={ 
                 <>
                   <NavComponent/>
-                  <AddToCartComponent/>
+                  <ShoppingCartComponent/>
                   <FooterComponent/>
                 </>}>
               </Route>

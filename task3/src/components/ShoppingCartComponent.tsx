@@ -13,7 +13,7 @@ import { ProductType } from '../types/dataType';
 
 
 
-export default function AddToCartComponent() {
+export default function ShoppingCartComponent() {
 
     const product = useContext( ProductContext );
     const [ totalState, setTotalState ] = useState< number >( 0 );
