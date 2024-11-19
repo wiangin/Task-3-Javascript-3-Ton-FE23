@@ -1,5 +1,6 @@
 // Ton FE23.
-//Contains input field and update text state.
+//Contains an input field and updates the textState.
+
 
 import { useState } from "react";
 import { useContext } from "react";

@@ -1,6 +1,7 @@
 //Ton FE23
-//Product list component do display the product when uers has filled search input.
-// Uppdate cartList state.
+// Renders a list of products matching the user's search query.
+// Updates the cart list state with selected products.
+
 
 import { useContext} from "react";
 import ProductContext from "../context/ProductContex";

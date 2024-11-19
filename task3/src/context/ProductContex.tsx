@@ -1,3 +1,6 @@
+//Ton FE23
+// Context setup.
+
 import { createContext } from "react";
 import { ProductContexObject } from "../types/dataType";
 

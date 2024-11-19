@@ -1,3 +1,7 @@
+// Ton FE23
+// This component is responsible for rendering all the components of the entire application.
+
+
 import './App.css';
 import ProviderComponent from './provider/ProviderComponent';
 import ProductListComponent from './components/ProductListComponent';

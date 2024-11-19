@@ -1,5 +1,5 @@
 //Ton FE23
-//Popup modal when user has click "More Info LINK"
+// Renders a modal popup displaying detailed product information when the "More Info" link is clicked.
 
 
 import '../style/modalStyel.css';

@@ -1,8 +1,7 @@
 //Ton FE23
-//This comonent display product list when user has click ADD.
-//Contains functions to check if the same product has add and display only one identical item.
-//Contains function to update the total price.
-//Contains function to detele product card.
+// Renders a list of products.
+// Implements logic to prevent duplicate products and update the total price accordingly.
+// Includes a funtion to remove products from the list.
 
 
 
