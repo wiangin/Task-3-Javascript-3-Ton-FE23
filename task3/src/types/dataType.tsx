@@ -18,13 +18,10 @@ export type ProductType = {
 export interface ProductContexObject {
     productState: ProductType[],
     setProductState: React.Dispatch<React.SetStateAction<ProductType[]>>
-    textState: string,
-    setTextState: React.Dispatch<React.SetStateAction<string>>
+    userInputState: string,
+    setUserInputState: React.Dispatch<React.SetStateAction<string>>
     cartList: ProductType[],
     setCartList: React.Dispatch<React.SetStateAction<ProductType[]>>,
-    addTocartState: number,
-    setAddToCartState: React.Dispatch<React.SetStateAction<number>>
-
 };
 
 export interface PropsType {

@@ -11,31 +11,27 @@ import '../style/providerCompStyle.css';
 export default function ProviderComponent( { children }: PropsType ) {
 
     const [ productState, setProductState ] = useState< ProductType[] >( [] );
-
-    // This is state for data from UserInputComponent.
-    const [ textState, setTextState ] = useState< string >( "" );
+    const [ userInputState, setUserInputState ] = useState< string >( "" );
     const [ cartList, setCartList ] = useState< ProductType[] >( [] );
-    const [ addTocartState, setAddToCartState ] = useState< number >( 0 ); 
+
    
     const providerValue: ProductContexObject = {
         productState: productState,
         setProductState: setProductState,
-        textState: textState,
-        setTextState: setTextState,
+        userInputState: userInputState,
+        setUserInputState: setUserInputState,
         cartList: cartList,
         setCartList: setCartList,
-        addTocartState: addTocartState,
-        setAddToCartState: setAddToCartState
     }
 
     useEffect( () => {
         const fetchData = async () => {
             let response;
 
-            if ( providerValue.textState == "" ){
+            if ( providerValue.userInputState == "" ){
                 response = await fetch( "https://dummyjson.com/products?limit=10" );
             } else{
-                response = await fetch( `https://dummyjson.com/products/search?q=${ providerValue.textState }`);
+                response = await fetch( `https://dummyjson.com/products/search?q=${ providerValue.userInputState }`);
             }
             
             const result: ProductType = await response.json();
@@ -46,7 +42,7 @@ export default function ProviderComponent( { children }: PropsType ) {
 
         fetchData();
 
-    }, [ textState ] );
+    }, [ userInputState ] );
 
     return(
         <ProductContext.Provider value={ providerValue }>

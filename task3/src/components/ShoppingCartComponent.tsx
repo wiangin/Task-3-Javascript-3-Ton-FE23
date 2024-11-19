@@ -4,7 +4,6 @@
 // Includes a funtion to remove products from the list.
 
 
-
 import '../style/cartList.css';
 import { useContext, useEffect, useState } from 'react';
 import ProductContext from '../context/ProductContex';
@@ -17,8 +16,10 @@ export default function ShoppingCartComponent() {
     const product = useContext( ProductContext );
     const [ totalState, setTotalState ] = useState< number >( 0 );
     
-    let orginalProductObj = product?.cartList.reduce<Record<string, number>>( ( counts, obj ) => {
+    let orginalProductObj = product?.cartList.reduce< Record< string, number > >( ( counts, obj ) => {
+       
         let key = JSON.stringify( obj );
+   
         counts[ key ] = ( counts[ key ] || 0 ) + 1;
 
         return counts;

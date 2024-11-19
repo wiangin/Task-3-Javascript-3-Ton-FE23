@@ -10,24 +10,24 @@ import '../style/inputStyle.css';
 
 
 export default function UserInputComponent() {
-    const [ inputState, setInputState ] = useState< string >( "" );
+    const [ onChangeState, setOnChangeState ] = useState< string >( "" );
     const product = useContext( ProductContext );
     const navigate = useNavigate();
 
     const onBtnClick = () => {
       
-        product?.setTextState( inputState );
-        setInputState( "" );
+        product?.setUserInputState( onChangeState );
+        setOnChangeState( "" );
         navigate( "/products" );
         
     };
 
     const onChangeInput = ( e: { target: { value: string } } ) => {
-        setInputState( e.target.value ) 
+        setOnChangeState( e.target.value ) 
     }
     return(
         <div className="search-style">
-                <input type="text" onChange={ onChangeInput } value={ inputState } placeholder="Search..."/>
+                <input type="text" onChange={ onChangeInput } value={ onChangeState } placeholder="Search..."/>
                 <button onClick={ onBtnClick }>Search</button>
         </div>
     )
