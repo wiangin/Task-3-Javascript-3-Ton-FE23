@@ -1,7 +1,7 @@
 .search-style input {
     margin-top: 20px;
     width: 230px;
-    padding: 10px;
+    padding: 15px;
     outline: none;
     border-radius: 10px 0 0 10px;
     border: none;
@@ -11,7 +11,7 @@
     
 }
 .search-style button {
-    padding: 11px;
+    padding: 16px;
     border-radius: 0px 10px 10px 0px;
     box-shadow: 4px 4px 5px lightgray;
     border: none;
@@ -19,4 +19,10 @@
     color: white;
     cursor: pointer;
    
+}
+
+@media ( min-width: 600px ) {
+    .search-style input {
+        width: 450px;
+    }
 }

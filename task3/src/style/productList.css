@@ -54,3 +54,17 @@ div li {
     color: white;
     font-size: medium;
 }
+
+@media (min-width: 600px)  {
+
+    .product-container ul{
+       display: flex;
+       flex-wrap: wrap;
+    }
+    .product-cart {
+        display: flex ;
+    }
+    .product-cart img {
+        max-width: 90px;
+    }
+}

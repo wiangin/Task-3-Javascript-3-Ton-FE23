@@ -49,3 +49,19 @@
     color: white;
 }
 
+@media ( min-width: 600px ) {
+    .inCart-container ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .inCart-container h2 {
+        
+        margin-left: 164px;
+    }
+
+    .product-inCart {
+        width: 75vw;
+    }
+}
