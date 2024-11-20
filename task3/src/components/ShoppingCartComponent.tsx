@@ -68,7 +68,7 @@ export default function ShoppingCartComponent() {
                                             <img src={ element.object.thumbnail } alt={ element.object.title } />
                                             <div>
                                                 <p>Price { element.object.price }</p>
-                                                <p>Shopping Cart  { element.count }</p>
+                                                <p>Qty : { element.count }</p>
                                                 <button className='delete-btn' value={ element.object.id } onClick={ onClickDelete }>Delete</button>
                                             </div>
                                         </div>
