@@ -22,7 +22,15 @@ export interface ProductContexObject {
     setUserInputState: React.Dispatch<React.SetStateAction<string>>
     cartList: ProductType[],
     setCartList: React.Dispatch<React.SetStateAction<ProductType[]>>,
+    dropDownState: DropDownType[],
+    setDropDownState: React.Dispatch<React.SetStateAction<DropDownType[]>>
 };
+
+export interface DropDownType {
+    title: string,
+    price: number,
+    id: number
+}
 
 export interface PropsType {
     children : ReactNode

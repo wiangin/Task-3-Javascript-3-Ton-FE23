@@ -6,23 +6,28 @@ import ProductContext from '../context/ProductContex';
 export default function DropDownComponent() {
     const product = useContext( ProductContext )
 
-    const loop = () => {
-        let element = [];
-
-             element.push(
-                product?.productState.map( ( element ) => {
-                    return  <li>{ element.title }</li>
-                } )
-                ) 
-        
-        return element;
-    }
- 
-
+    
     return (
         <div>
             <ul className="dropdown">
-                { loop() }
+              {
+                product?.dropDownState.map( ( element ) => {
+                    return (
+                        <div key={ element.id } className='dropdown-list'>
+                             <li>
+                                <div>
+                                    <p>{ element.title }</p>
+                                    <p>{ element.price }</p>
+                                </div>
+                               <div>
+                                    <button>Add</button>
+                               </div>
+                            </li>
+                        </div>
+                           
+                    )
+                } )
+              }
             </ul>
         </div>
   

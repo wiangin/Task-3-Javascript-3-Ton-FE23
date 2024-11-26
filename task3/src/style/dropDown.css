@@ -1,16 +1,22 @@
 .dropdown {
 
     border: 1px solid #ccc;
-    max-width: 200px;
+    width: 332px;
     position: absolute;
     background-color: #f9f9f9;
     list-style-type: none;
     padding: 0;
-   
     z-index: 1;
 }
 .dropdown li {
     padding: 8px;
-    cursor: pointer;
-    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-list li{
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px lightgray;
+    padding: 10px;
 }
