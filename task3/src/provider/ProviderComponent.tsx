@@ -3,7 +3,7 @@
 
 
 import ProductContext from "../context/ProductContex";
-import { ProductType, ProductContexObject, PropsType, DropDownType } from "../types/dataType";
+import { ProductType, ProductContexObject, PropsType } from "../types/dataType";
 import { useState, useEffect } from "react";
 import '../style/providerCompStyle.css';
 
@@ -13,7 +13,7 @@ export default function ProviderComponent( { children }: PropsType ) {
     const [ productState, setProductState ] = useState< ProductType[] >( [] );
     const [ userInputState, setUserInputState ] = useState< string >( "" );
     const [ cartList, setCartList ] = useState< ProductType[] >( [] );
-    const [ dropDownState, setDropDownState ] = useState< DropDownType[] >( [] );
+    const [ dropDownState, setDropDownState ] = useState< ProductType[] >( [] );
 
     
     const providerValue: ProductContexObject = {

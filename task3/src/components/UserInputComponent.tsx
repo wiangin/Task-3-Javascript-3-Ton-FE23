@@ -7,7 +7,7 @@ import { useContext, useEffect } from "react";
 import ProductContext from "../context/ProductContex";
 import { useNavigate } from "react-router-dom";
 import '../style/inputStyle.css';
-import { DropDownType } from "../types/dataType";
+import { ProductType } from "../types/dataType";
 import DropDownComponent from "./DropDownComponent";
 
 
@@ -42,11 +42,11 @@ export default function UserInputComponent() {
             
             setShowState( true );
             const fetchData = async () => {
-                const response = await fetch( `https://dummyjson.com/products/search?q=${ onChangeState }&limit=3&select=title,price` );
+                const response = await fetch( `https://dummyjson.com/products/search?q=${ onChangeState }&limit=3` );
                 const result = await response.json();
 
                 // console.log( result.products );
-                product?.setDropDownState( result.products as DropDownType[] )
+                product?.setProductState( result.products as ProductType[] )
             }
           
             fetchData();

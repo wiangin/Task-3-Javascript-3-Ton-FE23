@@ -22,8 +22,8 @@ export interface ProductContexObject {
     setUserInputState: React.Dispatch<React.SetStateAction<string>>
     cartList: ProductType[],
     setCartList: React.Dispatch<React.SetStateAction<ProductType[]>>,
-    dropDownState: DropDownType[],
-    setDropDownState: React.Dispatch<React.SetStateAction<DropDownType[]>>
+    dropDownState: ProductType[],
+    setDropDownState: React.Dispatch<React.SetStateAction<ProductType[]>>
 };
 
 export interface DropDownType {

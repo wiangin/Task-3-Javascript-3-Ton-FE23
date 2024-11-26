@@ -1,12 +1,13 @@
 .dropdown {
 
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     width: 332px;
     position: absolute;
     background-color: #f9f9f9;
     list-style-type: none;
     padding: 0;
     z-index: 1;
+    border-radius: 10px;
 }
 .dropdown li {
     padding: 8px;
