@@ -8,14 +8,10 @@ export default function DropDownComponent() {
     const product = useContext( ProductContext );
     const cartList = useContext( ProductContext );
 
-    console.log(cartList?.productState);
-    
-
     const onBtnClick = ( event: React.MouseEvent<HTMLButtonElement> ) => {
 
         const target = event.target as HTMLButtonElement;
         const value = target.value;
-        // console.log( id );
         
         const getProduct = () => {
             let element;
@@ -38,8 +34,8 @@ export default function DropDownComponent() {
         <div>
             <ul className="dropdown">
               {
-
-                product?.productState.map( ( element ) => {
+                cartList?.productState.sort( (a, b) => b.rating - a.rating)
+                .map( ( element ) => {
                     return (
                         
                         <div key={ element.id } className='dropdown-list'>
@@ -53,8 +49,7 @@ export default function DropDownComponent() {
                                     <button onClick={ onBtnClick } value={ element.id.toString() }>Add</button>
                                </div>
                             </li>
-                        </div>
-                           
+                        </div>              
                     )
                 } )
               }

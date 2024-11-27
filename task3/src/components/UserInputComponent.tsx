@@ -15,6 +15,9 @@ export default function UserInputComponent() {
     const [ onChangeState, setOnChangeState ] = useState< string >( "" );
     const [ showState, setShowState ] = useState( false );
 
+    console.log( onChangeState );
+    
+
     const product = useContext( ProductContext );
 
     const navigate = useNavigate();
@@ -23,11 +26,10 @@ export default function UserInputComponent() {
     const onBtnClick = () => {
       
         product?.setUserInputState( onChangeState );
-        setOnChangeState( "" );
+        // setOnChangeState( "" );
         setShowState( false );
         navigate( "/products" );
-
-        
+ 
     };
 
     const onChangeInput = ( e: { target: { value: string } } ) => {
@@ -38,20 +40,31 @@ export default function UserInputComponent() {
     // This function is for drop down meny
     useEffect( () => {
         
-        if( onChangeState.length >= 3 ) {
-            
-            setShowState( true );
+        
             const fetchData = async () => {
-                const response = await fetch( `https://dummyjson.com/products/search?q=${ onChangeState }&limit=3` );
-                const result = await response.json();
+                let response;
+                let result;
 
-                // console.log( result.products );
-                product?.setProductState( result.products as ProductType[] )
+                if( onChangeState.length >= 3 ) {
+                    setShowState( true );
+                    response = await fetch( `https://dummyjson.com/products/search?q=${ onChangeState }&limit=3` );
+                    result = await response.json();
+
+                    if( result.products.length !== 0 ) {
+                        product?.setProductState( result.products as ProductType[] );
+                    } else {                    
+                        setShowState( false );
+                    }    
+                } else if( onChangeState === "" ) {
+                    setShowState( false );
+                    response = await fetch( "https://dummyjson.com/products?limit=12" );
+                    result = await response.json();
+                    product?.setProductState( result.products as ProductType[] );
+                }
             }
           
             fetchData();
-        }
-
+        
     }, [ onChangeState ] )
 
 
