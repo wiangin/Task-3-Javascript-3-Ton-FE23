@@ -27,6 +27,9 @@ export default function ProviderComponent( { children }: PropsType ) {
         setDropDownState: setDropDownState
     }
 
+    console.log( userInputState );
+    
+
     useEffect( () => {
         const fetchData = async () => {
             let response;

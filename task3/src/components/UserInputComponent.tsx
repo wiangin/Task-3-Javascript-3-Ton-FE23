@@ -14,19 +14,18 @@ import DropDownComponent from "./DropDownComponent";
 export default function UserInputComponent() {
     const [ onChangeState, setOnChangeState ] = useState< string >( "" );
     const [ showState, setShowState ] = useState( false );
-    
-
     const product = useContext( ProductContext );
-
+   // const [ saveText, setSaveText ] = useState< string >( "" );
     const navigate = useNavigate();
 
    
     const onBtnClick = () => {
-      
+        
         product?.setUserInputState( onChangeState );
-        // setOnChangeState( "" );
+       
         setShowState( false );
         navigate( "/products" );
+        // setOnChangeState( "" );
  
     };
 
@@ -53,6 +52,7 @@ export default function UserInputComponent() {
                         setShowState( false );
                     }    
                 } else if( onChangeState === "" ) {
+                    product?.setUserInputState( "" );
                     setShowState( false );
                     response = await fetch( "https://dummyjson.com/products?limit=12" );
                     result = await response.json();
