@@ -27,23 +27,32 @@ export default function ProviderComponent( { children }: PropsType ) {
         setDropDownState: setDropDownState
     }
 
-    console.log( userInputState );
-    
-
     useEffect( () => {
         const fetchData = async () => {
-            let response;
+            try{
+                let response;
 
-            if ( providerValue.userInputState == "" ){
-                response = await fetch( "https://dummyjson.com/products?limit=12" );
-            } else{
-                response = await fetch( `https://dummyjson.com/products/search?q=${ providerValue.userInputState }`);
+                if ( providerValue.userInputState == "" ){
+                    response = await fetch( "https://dummyjson.com/products?limit=12" );
+                } else{
+                    response = await fetch( `https://dummyjson.com/products/search?q=${ providerValue.userInputState }`);
+                }
+                
+                if( !response.ok){
+                    throw new Error();
+                }
+                
+                const result: ProductType = await response.json();
+    
+                if( result.products.length !== 0 ){
+                    setProductState( result.products as ProductType[] );
+                } else {
+                    console.log( "product not found" );
+                }
+            } catch ( error ) {
+                console.error( error );
             }
-            
-            const result: ProductType = await response.json();
-
-            setProductState( result.products as ProductType[] )
-            
+  
         };
 
         fetchData();
