@@ -14,8 +14,8 @@ export default function ProviderComponent( { children }: PropsType ) {
     const [ userInputState, setUserInputState ] = useState< string >( "" );
     const [ cartList, setCartList ] = useState< ProductType[] >( [] );
     const [ dropDownState, setDropDownState ] = useState< ProductType[] >( [] );
-
-    
+  
+  
     const providerValue: ProductContexObject = {
         productState: productState,
         setProductState: setProductState,

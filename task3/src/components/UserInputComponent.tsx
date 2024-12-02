@@ -14,8 +14,6 @@ import DropDownComponent from "./DropDownComponent";
 export default function UserInputComponent() {
     const [ onChangeState, setOnChangeState ] = useState< string >( "" );
     const [ showState, setShowState ] = useState( false );
-
-    console.log( onChangeState );
     
 
     const product = useContext( ProductContext );
@@ -39,7 +37,6 @@ export default function UserInputComponent() {
 
     // This function is for drop down meny
     useEffect( () => {
-        
         
             const fetchData = async () => {
                 let response;
