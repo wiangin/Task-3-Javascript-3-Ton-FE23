@@ -18,6 +18,8 @@ export default function ProductListComponent() {
 
         const target = event.target as HTMLButtonElement;
         const value = target.value;
+        // console.log( "Product Add" );
+        
         // console.log( id );
         
         const getProduct = () => {
