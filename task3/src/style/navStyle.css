@@ -23,6 +23,7 @@
     cursor: pointer;
     text-decoration: none;
     color: white;
+    pointer-events: auto;
 }
 
 .nav-link a:hover {
@@ -30,4 +31,8 @@
     font-weight: bolder;
     color: rgb(247, 40, 40);
     font-style: italic;
+}
+
+.card-pic {
+    width: 1.4rem;
 }
