@@ -13,9 +13,11 @@ import { ProductType } from "../types/dataType";
 export default function ProductListComponent() {
     const product = useContext( ProductContext );
     const cartList = useContext( ProductContext );
+
+    // Display add to card messege.
     const [ isVisible, setVisible ] = useState( false );
 
-
+    // make add to massege disappear
     useEffect( () => {
         const timer = setTimeout( () => {
             setVisible( false );
