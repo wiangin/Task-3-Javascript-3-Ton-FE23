@@ -55,6 +55,28 @@ div li {
     font-size: medium;
 }
 
+.Add-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(85, 80, 80, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.Add-message-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 100px;
+    position: relative;
+    text-align: center;
+}
+
 @media (min-width: 600px)  {
 
     .product-container ul{

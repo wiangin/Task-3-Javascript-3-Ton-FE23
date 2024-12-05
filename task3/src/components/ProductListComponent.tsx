@@ -3,25 +3,35 @@
 // Updates the cart list state with selected products.
 
 
-import { useContext} from "react";
+import { useContext, useEffect, useState} from "react";
 import ProductContext from "../context/ProductContex";
 import '../style/productList.css';
 import { Link } from "react-router-dom";
 import { ProductType } from "../types/dataType";
 
+
 export default function ProductListComponent() {
     const product = useContext( ProductContext );
     const cartList = useContext( ProductContext );
+    const [ isVisible, setVisible ] = useState( false );
+
+
+    useEffect( () => {
+        const timer = setTimeout( () => {
+            setVisible( false );
+        }, 1000);
+
+        return () => clearInterval( timer )
+    }, [ isVisible ] );
     
 
     const onBtnClick = ( event: React.MouseEvent<HTMLButtonElement> ) => {
 
         const target = event.target as HTMLButtonElement;
         const value = target.value;
-        // console.log( "Product Add" );
         
-        // console.log( id );
-        
+        setVisible( true );
+    
         const getProduct = () => {
             let element;
             product?.productState.filter( ( item ) => {
@@ -40,8 +50,14 @@ export default function ProductListComponent() {
 
     return(
         <div className="product-container">
-            {/* <h2>Product List</h2> */}
-
+            {
+               isVisible && <div className="Add-message">
+                <div className="Add-message-content">
+                    <p>Product Add!</p>
+                </div>
+                
+            </div>
+            }
             <ul>
                 { 
                     product?.productState.map( ( element ) => {
