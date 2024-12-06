@@ -36,3 +36,7 @@
 .card-pic {
     width: 1.4rem;
 }
+
+.nav-link img:hover {
+   width: 40px;
+}
