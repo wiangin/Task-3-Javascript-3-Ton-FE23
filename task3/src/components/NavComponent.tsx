@@ -1,7 +1,7 @@
 import '../style/navStyle.css';
 import { Link } from 'react-router-dom';
 import cardPic from '../assets/shoppingCartWhite.png';
-
+import { HambergerMeny } from './HambergerMeny';
 
 export default function NavComponent() {
 
@@ -11,6 +11,8 @@ export default function NavComponent() {
                 <p>The Magic Shop</p>
             </div>
             
+            <HambergerMeny></HambergerMeny>
+
             <div className='nav-link'>
                 <Link to={"/"}>Home</Link>
                 <Link to={"/products"}>Search</Link>
