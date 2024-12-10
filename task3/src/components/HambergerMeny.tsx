@@ -28,10 +28,10 @@ export function HambergerMeny() {
                 <div className='sidebar'>
                     <div id="close-btn"><img src = {closeBtnPic} alt="close" onClick={closeBtn}></img></div>
                     <div className='sidebar-link'>
-                        <Link to={"/"}>Home</Link>
-                        <Link to={"/products"}>Search</Link>
+                        <Link  onClick={ closeBtn } to={"/"}>Home</Link>
+                        <Link onClick={ closeBtn } to={"/products"}>Search</Link>
                         {/* <Link to={'/cartList'}>Card</Link> */}
-                        <Link to={'/cartList'}>{ <img className='card-pic' src={ cardPic } alt="" /> }</Link>
+                        <Link onClick={ closeBtn } to={'/cartList'}>{ <img className='card-pic' src={ cardPic } alt="" /> }</Link>
                     </div>
                
                 </div>      
