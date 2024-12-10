@@ -12,13 +12,12 @@
     margin-left: 1rem;
     font-size: larger;
 }
-.nav-link {
+.nav-hamburger {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-right: 1.8rem;
 }
 
-.nav-link a {
+.nav-hamburger a {
     margin-right: 0.8rem;
     cursor: pointer;
     text-decoration: none;
@@ -26,7 +25,7 @@
     pointer-events: auto;
 }
 
-.nav-link a:hover {
+.nav-hamburger a:hover {
     font-size: 1.3rem;
     font-weight: bolder;
     color: rgb(247, 40, 40);
@@ -34,9 +33,9 @@
 }
 
 .card-pic {
-    width: 1.4rem;
+    width: 3rem;
 }
 
-.nav-link img:hover {
+.nav-hamburger img:hover {
    width: 40px;
 }
